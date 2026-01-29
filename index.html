@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos: A Caça ao Tesouro Histórico</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto+Slab:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="app-container">
+        <header>
+            <div class="header-content">
+                <h1>Chronos</h1>
+                <h2>A Caça ao Tesouro do Tempo</h2>
+            </div>
+            <p class="subtitle">Leia os Dossiês, responda aos desafios e conquiste suas medalhas.</p>
+
+            <div class="progress-wrapper">
+                <div class="progress-info">
+                    <span id="level-indicator">Nível 1</span>
+                    <span id="progress-text">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progress-bar-fill"></div>
+                </div>
+            </div>
+
+            <div id="medal-scoreboard">
+                <span>🥇 <span id="gold-count">0</span></span>
+                <span>🥈 <span id="silver-count">0</span></span>
+                <span>🥉 <span id="bronze-count">0</span></span>
+            </div>
+
+            <button id="reset-btn" onclick="resetGame()">Reiniciar Toda a História</button>
+        </header>
+
+        <main id="timeline">
+        </main>
+
+        <footer>
+            <p>Mantenha a curiosidade viva. A história é feita de detalhes.</p>
+        </footer>
+    </div>
+
+    <div id="modal-overlay" class="hidden">
+        <div id="modal-content">
+            <span id="close-modal">&times;</span>
+
+            <div id="modal-header">
+                <div class="modal-top-info">
+                    <span id="modal-era-badge">Era</span>
+                    <span id="modal-date">Data</span>
+                </div>
+                <h2 id="modal-title">Título do Conflito</h2>
+            </div>
+
+            <div id="content-mode">
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="openTab('contexto')">📜 Contexto</button>
+                    <button class="tab-btn" onclick="openTab('conflito')">⚔️ O Conflito</button>
+                    <button class="tab-btn" onclick="openTab('desfecho')">🏁 Desfecho</button>
+                    <button class="tab-btn" onclick="openTab('curiosidade')">💡 Curiosidade</button>
+                </div>
+
+                <div id="modal-body-container">
+                    <div id="tab-contexto" class="tab-content active-content"></div>
+                    <div id="tab-conflito" class="tab-content"></div>
+                    <div id="tab-desfecho" class="tab-content"></div>
+                    <div id="tab-curiosidade" class="tab-content"></div>
+                </div>
+            </div>
+
+            <div id="quiz-mode" class="hidden">
+                <div class="quiz-container">
+                    <h3>Desafio Histórico</h3>
+                    <p id="quiz-question">Pergunta aqui...</p>
+                    <div id="quiz-options" class="options-grid">
+                    </div>
+                    <p id="quiz-feedback" class="hidden"></p>
+                </div>
+            </div>
+
+            <div id="modal-footer">
+                <button id="action-btn" disabled>Leia todas as abas para desbloquear</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
